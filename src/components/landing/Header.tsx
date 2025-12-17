@@ -56,8 +56,8 @@ export const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:block">
-            <Button variant="hero" size="default">
-              Receber novidades
+            <Button variant="hero" size="default" asChild>
+              <a href="#novidades">Receber novidades</a>
             </Button>
           </div>
 
@@ -85,8 +85,8 @@ export const Header = () => {
                   {link.label}
                 </a>
               ))}
-              <Button variant="hero" size="lg" className="mt-2">
-                Receber novidades
+              <Button variant="hero" size="lg" className="mt-2" asChild>
+                <a href="#novidades">Receber novidades</a>
               </Button>
             </nav>
           </div>
