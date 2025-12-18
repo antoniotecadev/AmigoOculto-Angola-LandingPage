@@ -121,7 +121,7 @@ export const HeroSection = () => {
               <div className="absolute -left-6 bottom-32 bg-card rounded-2xl p-3 shadow-lg animate-float border border-border" style={{ animationDelay: "1s" }}>
                 <div className="flex items-center gap-2">
                   <span className="text-2xl">✨</span>
-                  <span className="text-sm font-medium text-foreground">AOA 5.000</span>
+                  <span className="text-sm font-medium text-foreground">Preço acessível</span>
                 </div>
               </div>
             </div>
