@@ -6,7 +6,7 @@
 
 ## 🎁 Sobre o Projecto
 
-Landing page oficial da aplicação [Amigo Oculto Angola](https://www.exemplo.com) - uma aplicação mobile desenvolvida para facilitar, organizar e modernizar eventos de Amigo Oculto em Angola.
+Landing page oficial da aplicação [Amigo Oculto Angola](https://amigooculto-angola-landingpage.vercel.app/) - uma aplicação mobile desenvolvida para facilitar, organizar e modernizar eventos de Amigo Oculto em Angola.
 
 ## 🎯 Objectivo
 
