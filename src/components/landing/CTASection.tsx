@@ -16,16 +16,39 @@ export const CTASection = () => {
 
     setIsLoading(true);
     
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    setIsLoading(false);
-    setIsSubmitted(true);
-    
-    toast({
-      title: "Email registado!",
-      description: "Será notificado quando o lançamento acontecer.",
-    });
+    try {
+      // Send email via Web3Forms
+      const formData = new FormData();
+      formData.append('access_key', 'a91bfb02-6a1a-4828-a0e2-1c97edf9e0ed');
+      formData.append('subject', 'Novo registo na lista de espera - Amigo Oculto Angola');
+      formData.append('from_name', 'Amigo Oculto Angola');
+      formData.append('email', email);
+      formData.append('message', `Novo registo recebido!\n\nEmail: ${email}\nData: ${new Date().toLocaleString('pt-PT')}\n\nEste utilizador registou-se na lista de espera para receber novidades sobre o lançamento do Amigo Oculto Angola.`);
+      
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await response.json();
+      
+      if (!data.success) throw new Error('Erro ao enviar');
+      
+      setIsLoading(false);
+      setIsSubmitted(true);
+      
+      toast({
+        title: "Email registado!",
+        description: "Será notificado quando o lançamento acontecer.",
+      });
+    } catch (error) {
+      setIsLoading(false);
+      toast({
+        title: "Erro ao registar",
+        description: "Por favor, tente novamente.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
